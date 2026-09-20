@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Responsive Christmas website with countdown timer, holiday greeting cards, and animated snowfall.">
+      <meta property="og:title" content="Responsive Christmas Website">
+      <meta property="og:description" content="Responsive Christmas website with countdown timer, holiday greeting cards, and animated snowfall.">
+
+      <!--=============== FAVICON ===============-->
+      <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css">
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="assets/css/styles.css">
+
+      <title>Responsive Christmas Website</title>
+   </head>
+   <body>
+      <!--==================== HEADER ====================-->
+      <header class="header" id="header">
+         <nav class="nav container" id="nav">
+            <a href="#" class="nav__logo" id="nav-logo">
+               <span>Merry</span> Christmas
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+               <ul class="nav__list">
+                  <li class="nav__item">
+                     <a href="#home" class="nav__link active-link" id="nav-link-home">01 Home</a>
+                  </li>
+                  <li class="nav__item">
+                     <a href="#card" class="nav__link" id="nav-link-card">02 Card</a>
+                  </li>
+                  <li class="nav__item">
+                     <a href="#cheer" class="nav__link" id="nav-link-cheer">03 Cheer</a>
+                  </li>
+                  <li class="nav__item">
+                     <a href="#contact" class="nav__link" id="nav-link-contact">04 Contact Us</a>
+                  </li>
+               </ul>
+
+               <!-- Close button -->
+               <div class="nav__close" id="nav-close">
+                  <i class="ri-close-line"></i>
+               </div>
+            </div>
+
+            <div class="nav__actions" id="nav-actions">
+               <button type="button" class="nav__icon-btn" id="btn-toggle-snow" title="Toggle Snowfall" aria-label="Toggle Snowfall" onclick="toggleSnow()">
+                  <i class="ri-snowflake-line" id="icon-snow"></i>
+               </button>
+               <button type="button" class="nav__icon-btn" id="btn-toggle-sound" title="Play Holiday Melody" aria-label="Play Holiday Melody" onclick="playJingleBellsSong()">
+                  <i class="ri-music-2-line" id="icon-sound"></i>
+               </button>
+               <div class="nav__circle" id="nav-circle" title="Cards ready or sent">
+                  <span id="nav-card-count">2</span>
+               </div>
+               <a href="#card" class="button nav__button" id="nav-button">Send a Card</a>
+
+               <!-- Toggle button -->
+               <div class="nav__toggle" id="nav-toggle">
+                  <i class="ri-menu-line"></i>
+               </div>
+            </div>
+         </nav>
+      </header>
+
+      <!--==================== MAIN ====================-->
+      <main class="main" id="main">
+         <!--==================== HOME ====================-->
+         <section class="home section" id="home">
+            <div class="home__container container grid" id="home-container">
+               <div class="home__data" id="home-data">
+                  <h1 class="home__title" id="home-title">
+                     Last <span>03</span> Days To Receive Christmas
+                  </h1>
+                  <p class="home__description" id="home-description">
+                     Share some Christmas spirit and happiness with these festive cards.
+                  </p>
+                  <div class="home__buttons" id="home-buttons">
+                     <a href="#card" class="button" id="home-button">Send a Christmas Card</a>
+                     <a href="#cheer" class="button button--ghost" id="home-ghost-button">Holiday Cheer</a>
+                  </div>
+               </div>
+
+               <div class="home__images" id="home-images">
+                  <img src="assets/img/santa.png" alt="Santa Claus" class="home__santa" id="home-santa">
+                  <img src="assets/img/bell.png" alt="Christmas Bell" class="home__bell" id="home-bell">
+                  <img src="assets/img/star.png" alt="Christmas Star" class="home__star" id="home-star">
+               </div>
+            </div>
+         </section>
+
+         <!--==================== STATS / TICKER ====================-->
+         <section class="stats section container" id="stats">
+            <div class="stats__grid" id="stats-grid">
+               <div class="stats__card" id="stat-days">
+                  <div class="stats__icon" id="stat-icon-days"><i class="ri-calendar-check-line"></i></div>
+                  <h3 class="stats__number" id="stats-days-count">03</h3>
+                  <span class="stats__label">Days Left</span>
+               </div>
+               <div class="stats__card" id="stat-hours">
+                  <div class="stats__icon" id="stat-icon-hours"><i class="ri-time-line"></i></div>
+                  <h3 class="stats__number" id="stats-hours-count">00</h3>
+                  <span class="stats__label">Hours Left</span>
+               </div>
+               <div class="stats__card" id="stat-sent">
+                  <div class="stats__icon" id="stat-icon-sent"><i class="ri-mail-heart-line"></i></div>
+                  <h3 class="stats__number" id="stats-sent-count">12,482</h3>
+                  <span class="stats__label">Cards Shared</span>
+               </div>
+               <div class="stats__card" id="stat-cheer">
+                  <div class="stats__icon" id="stat-icon-cheer"><i class="ri-sparkling-line"></i></div>
+                  <h3 class="stats__number" id="stats-cheer-count">100%</h3>
+                  <span class="stats__label">Holiday Cheer</span>
+               </div>
+            </div>
+         </section>
+
+         <!--==================== CARD SECTION ====================-->
+         <section class="card section" id="card">
+            <div class="section__header container" id="card-header">
+               <span class="section__subtitle" id="card-subtitle">Spread Joy</span>
+               <h2 class="section__title" id="card-title">Send a Christmas Card</h2>
+               <p class="section__description" id="card-description">
+                  Choose from our handpicked festive designs, personalize your greetings, and send happiness directly to friends and family.
+               </p>
+            </div>
+
+            <div class="card__container container grid" id="card-container">
+               <!-- Card 1 -->
+               <article class="card__article" id="card-item-1">
+                  <div class="card__shape" id="card-shape-1">
+                     <img src="assets/img/santa.png" alt="Santa Card" class="card__img" id="card-img-1">
+                  </div>
+                  <div class="card__content" id="card-content-1">
+                     <span class="card__tag" id="card-tag-1">Popular</span>
+                     <h3 class="card__title" id="card-title-1">Santa's Delivery</h3>
+                     <p class="card__description" id="card-desc-1">
+                        A merry greeting from Santa Claus loaded with holiday gifts and joyful spirits.
+                     </p>
+                     <button class="button card__button" id="btn-select-card-1" onclick="selectCardTheme('santa')">
+                        Customize Card <i class="ri-arrow-right-line"></i>
+                     </button>
+                  </div>
+               </article>
+
+               <!-- Card 2 -->
+               <article class="card__article" id="card-item-2">
+                  <div class="card__shape" id="card-shape-2">
+                     <img src="assets/img/bell.png" alt="Golden Bell Card" class="card__img card__img--bell" id="card-img-2">
+                     <img src="assets/img/star.png" alt="Star" class="card__img-accent" id="card-img-accent-2">
+                  </div>
+                  <div class="card__content" id="card-content-2">
+                     <span class="card__tag" id="card-tag-2">Sparkle</span>
+                     <h3 class="card__title" id="card-title-2">Golden Starlight</h3>
+                     <p class="card__description" id="card-desc-2">
+                        Ring in peace and harmony with shining golden bells and bright northern stars.
+                     </p>
+                     <button class="button card__button" id="btn-select-card-2" onclick="selectCardTheme('golden')">
+                        Customize Card <i class="ri-arrow-right-line"></i>
+                     </button>
+                  </div>
+               </article>
+
+               <!-- Card 3 -->
+               <article class="card__article" id="card-item-3">
+                  <div class="card__shape" id="card-shape-3">
+                     <img src="assets/img/snowman.jpg" alt="Snowman Card" class="card__img card__img--rounded" id="card-img-3">
+                  </div>
+                  <div class="card__content" id="card-content-3">
+                     <span class="card__tag" id="card-tag-3">Cozy</span>
+                     <h3 class="card__title" id="card-title-3">Winter Snowman</h3>
+                     <p class="card__description" id="card-desc-3">
+                        Warm knitted hats, fresh snowflakes, and warm hugs for the coldest winter days.
+                     </p>
+                     <button class="button card__button" id="btn-select-card-3" onclick="selectCardTheme('snowman')">
+                        Customize Card <i class="ri-arrow-right-line"></i>
+                     </button>
+                  </div>
+               </article>
+            </div>
+
+            <!-- INTERACTIVE CARD PERSONALIZER STUDIO -->
+            <div class="customizer container" id="card-customizer">
+               <div class="customizer__wrapper grid" id="customizer-wrapper">
+                  <!-- Live Card Preview -->
+                  <div class="customizer__preview" id="customizer-preview-box">
+                     <div class="festive-card" id="festive-card-canvas">
+                        <div class="festive-card__top">
+                           <span class="festive-card__stamp" id="card-preview-stamp">Merry Christmas</span>
+                           <i class="ri-sparkling-fill festive-card__sparkle"></i>
+                        </div>
+                        <div class="festive-card__badge" id="card-preview-theme-badge">Santa's Delivery</div>
+                        
+                        <div class="festive-card__illustration" id="card-preview-illustration">
+                           <img src="assets/img/santa.png" alt="Card Theme Image" id="card-preview-img">
+                        </div>
+
+                        <div class="festive-card__body">
+                           <p class="festive-card__to" id="card-preview-to">To: Dearest Friend & Family,</p>
+                           <p class="festive-card__message" id="card-preview-message">
+                              "May your Christmas sparkle with moments of love, laughter and goodwill, and may the year ahead be full of happiness and joy!"
+                           </p>
+                           <p class="festive-card__from" id="card-preview-from">Warmly from, Santa's Helper</p>
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- Personalizer Controls -->
+                  <div class="customizer__form-card" id="customizer-form-card">
+                     <h3 class="customizer__title" id="customizer-title">Personalize Your Greeting</h3>
+                     <p class="customizer__subtitle" id="customizer-subtitle">Craft a bespoke Christmas card to share instantly.</p>
+
+                     <div class="customizer__field" id="field-theme-select">
+                        <label class="customizer__label">Choose Theme</label>
+                        <div class="customizer__theme-pills" id="theme-pills">
+                           <button type="button" class="theme-pill active" id="pill-santa" onclick="selectCardTheme('santa')">Santa Claus</button>
+                           <button type="button" class="theme-pill" id="pill-golden" onclick="selectCardTheme('golden')">Golden Starlight</button>
+                           <button type="button" class="theme-pill" id="pill-snowman" onclick="selectCardTheme('snowman')">Winter Snowman</button>
+                        </div>
+                     </div>
+
+                     <div class="customizer__field" id="field-to">
+                        <label for="input-card-to" class="customizer__label">Recipient Name</label>
+                        <input type="text" id="input-card-to" class="customizer__input" placeholder="e.g., Mom & Dad, Jessica, Team" value="Dearest Friend & Family">
+                     </div>
+
+                     <div class="customizer__field" id="field-quick-messages">
+                        <label class="customizer__label">Quick Wishes</label>
+                        <div class="customizer__templates" id="customizer-templates">
+                           <button type="button" class="template-chip" id="chip-1" onclick="setGreetingPreset(1)">Peace & Joy</button>
+                           <button type="button" class="template-chip" id="chip-2" onclick="setGreetingPreset(2)">Warm Hugs</button>
+                           <button type="button" class="template-chip" id="chip-3" onclick="setGreetingPreset(3)">Merry & Bright</button>
+                        </div>
+                     </div>
+
+                     <div class="customizer__field" id="field-message">
+                        <label for="input-card-message" class="customizer__label">Your Christmas Message</label>
+                        <textarea id="input-card-message" class="customizer__textarea" rows="3">May your Christmas sparkle with moments of love, laughter and goodwill, and may the year ahead be full of happiness and joy!</textarea>
+                     </div>
+
+                     <div class="customizer__field" id="field-from">
+                        <label for="input-card-from" class="customizer__label">Your Name / Signature</label>
+                        <input type="text" id="input-card-from" class="customizer__input" placeholder="e.g., Your Name" value="Santa's Helper">
+                     </div>
+
+                     <div class="customizer__actions" id="customizer-actions">
+                        <button type="button" class="button" id="btn-send-card" onclick="sendCustomCard()">
+                           <i class="ri-send-plane-fill"></i> Send Card Now
+                        </button>
+                        <button type="button" class="button button--ghost" id="btn-play-jingle" onclick="playHolidayChime()">
+                           <i class="ri-music-2-fill"></i> Play Jingle Chime
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!--==================== CHEER & JINGLE BELLS ====================-->
+         <section class="cheer section" id="cheer">
+            <div class="section__header container" id="cheer-header">
+               <span class="section__subtitle" id="cheer-subtitle">Holiday Traditions</span>
+               <h2 class="section__title" id="cheer-title">Spread Cheer & Festive Music</h2>
+               <p class="section__description" id="cheer-description">
+                  Celebrate holiday warmth with sweet traditions, kindness, and our interactive Christmas jingle bell piano!
+               </p>
+            </div>
+
+            <div class="cheer__container container grid" id="cheer-container">
+               <!-- Tradition 1 -->
+               <div class="cheer__card" id="cheer-card-1">
+                  <div class="cheer__icon" id="cheer-icon-1"><i class="ri-cup-line"></i></div>
+                  <h3 class="cheer__name" id="cheer-name-1">Bake Holiday Treats</h3>
+                  <p class="cheer__text" id="cheer-text-1">Freshly baked gingerbread men, hot cocoa with marshmallows, and cinnamon sugar cookies to share.</p>
+               </div>
+
+               <!-- Tradition 2 -->
+               <div class="cheer__card" id="cheer-card-2">
+                  <div class="cheer__icon" id="cheer-icon-2"><i class="ri-gift-2-line"></i></div>
+                  <h3 class="cheer__name" id="cheer-name-2">Secret Santa Giving</h3>
+                  <p class="cheer__text" id="cheer-text-2">Surprise those you care about with thoughtful gifts and anonymous tokens of appreciation.</p>
+               </div>
+
+               <!-- Tradition 3 -->
+               <div class="cheer__card" id="cheer-card-3">
+                  <div class="cheer__icon" id="cheer-icon-3"><i class="ri-music-fill"></i></div>
+                  <h3 class="cheer__name" id="cheer-name-3">Sing Joyful Carols</h3>
+                  <p class="cheer__text" id="cheer-text-3">Gather around with friends and sing uplifting carols that keep hearts cheerful and light.</p>
+               </div>
+            </div>
+
+            <!-- INTERACTIVE JINGLE BELLS SOUNDBOARD -->
+            <div class="jingle container" id="jingle-box">
+               <div class="jingle__inner" id="jingle-inner">
+                  <div class="jingle__header" id="jingle-header">
+                     <h3 class="jingle__title" id="jingle-title">
+                        <i class="ri-notification-3-fill"></i> Santa's Jingle Bell Chimes
+                     </h3>
+                     <p class="jingle__desc" id="jingle-desc">
+                        Click the bells below to ring cheerful holiday chimes, or play the Jingle Bells melody automatically!
+                     </p>
+                  </div>
+
+                  <div class="jingle__bells" id="jingle-bells-keyboard">
+                     <button type="button" class="jingle__key" id="bell-key-c" onclick="ringBell(261.63, 'C')">
+                        <span class="jingle__note">Do</span>
+                        <i class="ri-notification-2-line"></i>
+                        <span class="jingle__letter">C</span>
+                     </button>
+                     <button type="button" class="jingle__key" id="bell-key-d" onclick="ringBell(293.66, 'D')">
+                        <span class="jingle__note">Re</span>
+                        <i class="ri-notification-2-line"></i>
+                        <span class="jingle__letter">D</span>
+                     </button>
+                     <button type="button" class="jingle__key" id="bell-key-e" onclick="ringBell(329.63, 'E')">
+                        <span class="jingle__note">Mi</span>
+                        <i class="ri-notification-2-line"></i>
+                        <span class="jingle__letter">E</span>
+                     </button>
+                     <button type="button" class="jingle__key" id="bell-key-f" onclick="ringBell(349.23, 'F')">
+                        <span class="jingle__note">Fa</span>
+                        <i class="ri-notification-2-line"></i>
+                        <span class="jingle__letter">F</span>
+                     </button>
+                     <button type="button" class="jingle__key" id="bell-key-g" onclick="ringBell(392.00, 'G')">
+                        <span class="jingle__note">Sol</span>
+                        <i class="ri-notification-2-line"></i>
+                        <span class="jingle__letter">G</span>
+                     </button>
+                     <button type="button" class="jingle__key" id="bell-key-a" onclick="ringBell(440.00, 'A')">
+                        <span class="jingle__note">La</span>
+                        <i class="ri-notification-2-line"></i>
+                        <span class="jingle__letter">A</span>
+                     </button>
+                     <button type="button" class="jingle__key" id="bell-key-high-c" onclick="ringBell(523.25, 'High C')">
+                        <span class="jingle__note">Do</span>
+                        <i class="ri-notification-2-line"></i>
+                        <span class="jingle__letter">C'</span>
+                     </button>
+                  </div>
+
+                  <div class="jingle__control" id="jingle-control">
+                     <button type="button" class="button button--ghost" id="btn-play-song" onclick="playJingleBellsSong()">
+                        <i class="ri-play-circle-fill"></i> Play "Jingle Bells" Tune
+                     </button>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!--==================== CONTACT US ====================-->
+         <section class="contact section" id="contact">
+            <div class="section__header container" id="contact-header">
+               <span class="section__subtitle" id="contact-subtitle">Get In Touch</span>
+               <h2 class="section__title" id="contact-title">Write To Santa & Our Team</h2>
+               <p class="section__description" id="contact-description">
+                  Have questions, want custom cards, or wish to dispatch a letter straight to the North Pole? We'd love to hear from you.
+               </p>
+            </div>
+
+            <div class="contact__container container grid" id="contact-container">
+               <!-- Contact Info -->
+               <div class="contact__info grid" id="contact-info">
+                  <div class="contact__card" id="contact-card-address">
+                     <i class="ri-map-pin-2-fill contact__icon"></i>
+                     <h3 class="contact__card-title">Santa's Workshop</h3>
+                     <p class="contact__card-data">North Pole, Arctic Circle 99705</p>
+                  </div>
+
+                  <div class="contact__card" id="contact-card-email">
+                     <i class="ri-mail-star-fill contact__icon"></i>
+                     <h3 class="contact__card-title">Holiday Mailbox</h3>
+                     <p class="contact__card-data">santa@merrychristmas.festive</p>
+                  </div>
+
+                  <div class="contact__card" id="contact-card-phone">
+                     <i class="ri-phone-fill contact__icon"></i>
+                     <h3 class="contact__card-title">Christmas Helpline</h3>
+                     <p class="contact__card-data">+1 (800) 464-6464 (HO-HO-HO)</p>
+                  </div>
+               </div>
+
+               <!-- Contact Form -->
+               <form class="contact__form" id="contact-form" onsubmit="handleContactSubmit(event)">
+                  <h3 class="contact__form-title" id="contact-form-title">Send a Holiday Note</h3>
+
+                  <div class="contact__group" id="contact-group-name">
+                     <label for="contact-name" class="contact__label">Your Name</label>
+                     <input type="text" id="contact-name" class="contact__input" placeholder="e.g. Nicholas Green" required>
+                  </div>
+
+                  <div class="contact__group" id="contact-group-email">
+                     <label for="contact-email" class="contact__label">Your Email</label>
+                     <input type="email" id="contact-email" class="contact__input" placeholder="e.g. nicholas@example.com" required>
+                  </div>
+
+                  <div class="contact__group" id="contact-group-subject">
+                     <label for="contact-subject" class="contact__label">Letter Type</label>
+                     <select id="contact-subject" class="contact__select">
+                        <option value="Christmas Greeting">Christmas Greeting</option>
+                        <option value="Letter to Santa">Letter to Santa</option>
+                        <option value="Holiday Wishlist">My Christmas Wishlist</option>
+                        <option value="General Question">General Inquiry</option>
+                     </select>
+                  </div>
+
+                  <div class="contact__group" id="contact-group-message">
+                     <label for="contact-message" class="contact__label">Your Message / Wishes</label>
+                     <textarea id="contact-message" class="contact__textarea" rows="4" placeholder="Dear Santa and team, for this Christmas I wish for..." required></textarea>
+                  </div>
+
+                  <button type="submit" class="button contact__button" id="contact-submit-btn">
+                     <i class="ri-send-plane-fill"></i> Dispatch Letter
+                  </button>
+               </form>
+            </div>
+         </section>
+      </main>
+
+      <!--==================== FOOTER ====================-->
+      <footer class="footer" id="footer">
+         <div class="footer__container container grid" id="footer-container">
+            <div class="footer__content" id="footer-brand">
+               <a href="#" class="footer__logo" id="footer-logo">
+                  <span>Merry</span> Christmas
+               </a>
+               <p class="footer__description" id="footer-desc">
+                  Bringing holiday joy, laughter, and heartwarming cards to households across the globe every December.
+               </p>
+               <div class="footer__socials" id="footer-socials">
+                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer__social-link" id="social-fb" aria-label="Facebook">
+                     <i class="ri-facebook-fill"></i>
+                  </a>
+                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer__social-link" id="social-ig" aria-label="Instagram">
+                     <i class="ri-instagram-line"></i>
+                  </a>
+                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer__social-link" id="social-tw" aria-label="Twitter">
+                     <i class="ri-twitter-x-line"></i>
+                  </a>
+                  <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer__social-link" id="social-yt" aria-label="YouTube">
+                     <i class="ri-youtube-line"></i>
+                  </a>
+               </div>
+            </div>
+
+            <div class="footer__content" id="footer-links-box">
+               <h3 class="footer__title" id="footer-links-title">Quick Links</h3>
+               <ul class="footer__links" id="footer-links-list">
+                  <li><a href="#home" class="footer__link" id="f-link-home">Home</a></li>
+                  <li><a href="#card" class="footer__link" id="f-link-card">Christmas Cards</a></li>
+                  <li><a href="#cheer" class="footer__link" id="f-link-cheer">Cheer & Jingle Bells</a></li>
+                  <li><a href="#contact" class="footer__link" id="f-link-contact">Contact Santa</a></li>
+               </ul>
+            </div>
+
+            <div class="footer__content" id="footer-newsletter-box">
+               <h3 class="footer__title" id="footer-news-title">Holiday Newsletter</h3>
+               <p class="footer__description" id="footer-news-desc">
+                  Subscribe to receive Santa's Christmas Eve countdown notifications and festive recipes.
+               </p>
+               <form class="footer__form" id="footer-form" onsubmit="handleNewsletterSubmit(event)">
+                  <input type="email" id="footer-newsletter-email" class="footer__input" placeholder="Enter your email" required>
+                  <button type="submit" class="button footer__button" id="footer-news-btn">Join</button>
+               </form>
+            </div>
+         </div>
+
+         <div class="footer__bottom container" id="footer-bottom">
+            <span class="footer__copy" id="footer-copy">
+               &#169; All rights reserved. Created with holiday joy by Bedimcode.
+            </span>
+         </div>
+      </footer>
+
+      <!--=============== SCROLL UP ===============-->
+      <a href="#" class="scrollup" id="scroll-up" aria-label="Scroll to top">
+         <i class="ri-arrow-up-line"></i>
+      </a>
+
+      <!--=============== TOAST NOTIFICATION ===============-->
+      <div class="toast" id="toast">
+         <i class="ri-checkbox-circle-fill toast__icon" id="toast-icon"></i>
+         <div class="toast__content" id="toast-content">
+            <h4 class="toast__title" id="toast-title">Card Dispatched!</h4>
+            <p class="toast__msg" id="toast-msg">Your Christmas card has been shared with joy.</p>
+         </div>
+      </div>
+
+      <!--=============== SNOW JS ===============-->
+      <script src="assets/js/snow.js"></script>
+
+      <!--=============== MAIN JS ===============-->
+      <script src="assets/js/main.js"></script>
+   </body>
+</html>

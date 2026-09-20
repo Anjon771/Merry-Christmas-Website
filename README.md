@@ -1,11 +1,14 @@
-<div align="center">
+# Responsive Christmas Website
+## [Watch it on youtube](https://youtu.be/PCOnO6FG4YU)
+### Responsive Christmas Website
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+- Responsive Christmas Website Design Using HTML CSS & JavaScript
+- Contains countdown to Christmas in days, hours, minutes & seconds.
+- It also contains a message on Christmas Day.
+- Along with the snow animation.
+- Developed first with the Mobile First methodology, then for desktop.
+- Compatible with all mobile devices and with a beautiful and pleasant user interface.
 
-  <h1>Built with AI Studio</h2>
+💙 Join the channel to see more videos like this. [Bedimcode](https://www.youtube.com/@Bedimcode)
 
-  <p>The fastest path from prompt to production with Gemini.</p>
-
-  <a href="https://aistudio.google.com/apps">Start building</a>
-
-</div>
+![preview img](/preview.png)

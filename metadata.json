@@ -1,0 +1,6 @@
+{
+  "name": "Responsive Christmas Website",
+  "description": "Responsive Christmas website with countdown timer, holiday greeting cards, and animated snowfall.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
