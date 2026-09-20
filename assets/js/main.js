@@ -148,18 +148,21 @@ const themes = {
         badge: "Santa's Delivery",
         stamp: 'Merry Christmas',
         img: 'assets/img/santa.png',
+        fallback: 'https://cdn.jsdelivr.net/gh/bedimcode/responsive-christmas-website-3@main/assets/img/santa.png',
         cardClass: ''
     },
     golden: {
         badge: 'Golden Starlight',
         stamp: 'Joy & Peace',
         img: 'assets/img/bell.png',
+        fallback: 'https://cdn.jsdelivr.net/gh/bedimcode/responsive-christmas-website-3@main/assets/img/bell.png',
         cardClass: 'theme-golden'
     },
     snowman: {
         badge: 'Winter Snowman',
         stamp: 'Season Greetings',
         img: 'assets/img/snowman.jpg',
+        fallback: 'src/assets/images/card_snowman_1789915242435.jpg',
         cardClass: 'theme-snowman'
     }
 }
@@ -180,7 +183,16 @@ window.selectCardTheme = (themeKey) => {
     }
     if(badge) badge.textContent = themes[themeKey].badge
     if(stamp) stamp.textContent = themes[themeKey].stamp
-    if(img) img.src = themes[themeKey].img
+    if(img) {
+        img.onerror = function() {
+            if(window.handleImgError) {
+                window.handleImgError(this);
+            } else if(themes[themeKey].fallback) {
+                this.src = themes[themeKey].fallback;
+            }
+        };
+        img.src = themes[themeKey].img;
+    }
 
     // Update pill styles
     document.querySelectorAll('.theme-pill').forEach(pill => pill.classList.remove('active'))

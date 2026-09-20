@@ -7,6 +7,9 @@
       <meta property="og:title" content="Responsive Christmas Website">
       <meta property="og:description" content="Responsive Christmas website with countdown timer, holiday greeting cards, and animated snowfall.">
 
+      <!--=============== IMAGE FALLBACK SCRIPT (PRE-LOADED) ===============-->
+      <script src="assets/js/image-fallback.js"></script>
+
       <!--=============== FAVICON ===============-->
       <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
@@ -87,9 +90,9 @@
                </div>
 
                <div class="home__images" id="home-images">
-                  <img src="assets/img/santa.png" alt="Santa Claus" class="home__santa" id="home-santa">
-                  <img src="assets/img/bell.png" alt="Christmas Bell" class="home__bell" id="home-bell">
-                  <img src="assets/img/star.png" alt="Christmas Star" class="home__star" id="home-star">
+                  <img src="assets/img/santa.png" alt="Santa Claus" class="home__santa" id="home-santa" onerror="if(window.handleImgError)window.handleImgError(this);">
+                  <img src="assets/img/bell.png" alt="Christmas Bell" class="home__bell" id="home-bell" onerror="if(window.handleImgError)window.handleImgError(this);">
+                  <img src="assets/img/star.png" alt="Christmas Star" class="home__star" id="home-star" onerror="if(window.handleImgError)window.handleImgError(this);">
                </div>
             </div>
          </section>
@@ -134,7 +137,7 @@
                <!-- Card 1 -->
                <article class="card__article" id="card-item-1">
                   <div class="card__shape" id="card-shape-1">
-                     <img src="assets/img/santa.png" alt="Santa Card" class="card__img" id="card-img-1">
+                     <img src="assets/img/santa.png" alt="Santa Card" class="card__img" id="card-img-1" onerror="if(window.handleImgError)window.handleImgError(this);">
                   </div>
                   <div class="card__content" id="card-content-1">
                      <span class="card__tag" id="card-tag-1">Popular</span>
@@ -151,8 +154,8 @@
                <!-- Card 2 -->
                <article class="card__article" id="card-item-2">
                   <div class="card__shape" id="card-shape-2">
-                     <img src="assets/img/bell.png" alt="Golden Bell Card" class="card__img card__img--bell" id="card-img-2">
-                     <img src="assets/img/star.png" alt="Star" class="card__img-accent" id="card-img-accent-2">
+                     <img src="assets/img/bell.png" alt="Golden Bell Card" class="card__img card__img--bell" id="card-img-2" onerror="if(window.handleImgError)window.handleImgError(this);">
+                     <img src="assets/img/star.png" alt="Star" class="card__img-accent" id="card-img-accent-2" onerror="if(window.handleImgError)window.handleImgError(this);">
                   </div>
                   <div class="card__content" id="card-content-2">
                      <span class="card__tag" id="card-tag-2">Sparkle</span>
@@ -169,7 +172,7 @@
                <!-- Card 3 -->
                <article class="card__article" id="card-item-3">
                   <div class="card__shape" id="card-shape-3">
-                     <img src="assets/img/snowman.jpg" alt="Snowman Card" class="card__img card__img--rounded" id="card-img-3">
+                     <img src="assets/img/snowman.jpg" alt="Snowman Card" class="card__img card__img--rounded" id="card-img-3" onerror="this.onerror=null; this.src='src/assets/images/card_snowman_1789915242435.jpg';">
                   </div>
                   <div class="card__content" id="card-content-3">
                      <span class="card__tag" id="card-tag-3">Cozy</span>
@@ -197,7 +200,7 @@
                         <div class="festive-card__badge" id="card-preview-theme-badge">Santa's Delivery</div>
                         
                         <div class="festive-card__illustration" id="card-preview-illustration">
-                           <img src="assets/img/santa.png" alt="Card Theme Image" id="card-preview-img">
+                           <img src="assets/img/santa.png" alt="Card Theme Image" id="card-preview-img" onerror="if(window.handleImgError)window.handleImgError(this);">
                         </div>
 
                         <div class="festive-card__body">
